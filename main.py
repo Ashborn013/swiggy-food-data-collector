@@ -34,6 +34,6 @@ for url in urls:
         try:
             mycoursor.execute(quary)
         except:
-            quary=f"update table food set price = {d[i]} where food_name = {i} "
+            quary=f"update table foods set price = {d[i]} where food_name = {i} "
     db.commit()
 db.close()

@@ -22,7 +22,10 @@ for url in l_cits:
         the_we_url = i['href']
         shop_curls.append(f"https://www.swiggy.com{the_we_url}")
         # print(shop_curls[-1])
-    if len(shop_curls) > 500:
-        break
+
+
+    # if len(shop_curls) > 500:
+    #     break
 with open('urls.pkl', 'wb') as f:
     pickle.dump(shop_curls, f)
+    
