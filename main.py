@@ -5,15 +5,12 @@ import mysql.connector
 import pickle
 
 db = mysql.connector.connect(
-    host='localhost',
-    user='root',
-    password='root',
-    database='swag'
+    host="localhost", user="root", password="root", database="swag"
 )
 mycoursor = db.cursor()
 
 try:
-    with open('urls.pkl', 'rb') as f:
+    with open("urls.pkl", "rb") as f:
         urls = pickle.load(f)
 except:
     print("Give me the pickle")
@@ -34,6 +31,6 @@ for url in urls:
         try:
             mycoursor.execute(quary)
         except:
-            quary=f"update table foods set price = {d[i]} where food_name = {i} "
+            quary = f"update table foods set price = {d[i]} where food_name = {i} "
     db.commit()
 db.close()
